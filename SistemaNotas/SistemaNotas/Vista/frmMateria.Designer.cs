@@ -35,7 +35,6 @@
             this.dtvMateria = new System.Windows.Forms.DataGridView();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreMateria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BtnRegresar = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -45,7 +44,7 @@
             // btnAgregar
             // 
             this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregar.Location = new System.Drawing.Point(180, 174);
+            this.btnAgregar.Location = new System.Drawing.Point(205, 174);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(112, 48);
             this.btnAgregar.TabIndex = 0;
@@ -56,7 +55,7 @@
             // btnActualizar
             // 
             this.btnActualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnActualizar.Location = new System.Drawing.Point(352, 174);
+            this.btnActualizar.Location = new System.Drawing.Point(454, 174);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(119, 48);
             this.btnActualizar.TabIndex = 1;
@@ -89,6 +88,7 @@
             this.dtvMateria.Name = "dtvMateria";
             this.dtvMateria.Size = new System.Drawing.Size(594, 151);
             this.dtvMateria.TabIndex = 4;
+            this.dtvMateria.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtvMateria_CellClick);
             this.dtvMateria.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // Id
@@ -100,17 +100,6 @@
             // 
             this.NombreMateria.HeaderText = "NombreMateria";
             this.NombreMateria.Name = "NombreMateria";
-            // 
-            // BtnRegresar
-            // 
-            this.BtnRegresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnRegresar.Location = new System.Drawing.Point(540, 173);
-            this.BtnRegresar.Name = "BtnRegresar";
-            this.BtnRegresar.Size = new System.Drawing.Size(103, 49);
-            this.BtnRegresar.TabIndex = 5;
-            this.BtnRegresar.Text = "Regresar";
-            this.BtnRegresar.UseVisualStyleBackColor = true;
-            this.BtnRegresar.Click += new System.EventHandler(this.BtnRegresar_Click);
             // 
             // label5
             // 
@@ -151,7 +140,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.BtnRegresar);
             this.Controls.Add(this.dtvMateria);
             this.Controls.Add(this.txtnombre_materia);
             this.Controls.Add(this.txtId_materia);
@@ -175,7 +163,6 @@
         private System.Windows.Forms.DataGridView dtvMateria;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreMateria;
-        private System.Windows.Forms.Button BtnRegresar;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;

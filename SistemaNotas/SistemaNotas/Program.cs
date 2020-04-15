@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SistemaNotas.Vista;
 
 namespace SistemaNotas
 {
@@ -16,7 +17,7 @@ namespace SistemaNotas
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Loguin());
+            Application.Run(new MenuPrincipal());
         }
     }
 }

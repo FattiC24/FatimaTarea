@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SistemaNotas.Vista;
 
 namespace SistemaNotas.Vista
 {
@@ -20,22 +21,22 @@ namespace SistemaNotas.Vista
         private void mantenimientoDeEstudiantesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmEstudiante Est = new frmEstudiante();
+            Est.MdiParent = this;
             Est.Show();
-            this.Hide();
         }
 
         private void materiasToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            frmMateria Mat = new frmMateria();
-            Mat.Show();
-            this.Hide();
+            frmMateria materia = new frmMateria();
+            materia.MdiParent = this;
+            materia.Show();
         }
 
         private void notasToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             frmNotas Nota = new frmNotas();
+            Nota.MdiParent = this;
             Nota.Show();
-            this.Hide();
         }
         private void estudiantesToolStripMenuItem_Click(object sender, EventArgs e)
         {

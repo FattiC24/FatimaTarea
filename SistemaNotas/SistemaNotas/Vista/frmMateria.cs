@@ -84,11 +84,12 @@ namespace SistemaNotas.Vista
 
         }
 
-        private void BtnRegresar_Click(object sender, EventArgs e)
+        private void dtvMateria_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            MenuPrincipal m = new MenuPrincipal();
-            m.Show();
-            this.Hide();
+            String IdMateria = dtvMateria.CurrentRow.Cells[0].Value.ToString();
+            String Materia = dtvMateria.CurrentRow.Cells[1].Value.ToString();
+            txtId_materia.Text = IdMateria;
+            txtnombre_materia.Text = Materia;
         }
     }
 }

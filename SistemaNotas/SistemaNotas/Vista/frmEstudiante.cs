@@ -111,12 +111,7 @@ namespace SistemaNotas.Vista
 
         }
 
-        private void btnRegresar_Click(object sender, EventArgs e)
-        {
-            MenuPrincipal m = new MenuPrincipal();
-            m.Show();
-            this.Hide();
-        }
+        
     }
 }
 

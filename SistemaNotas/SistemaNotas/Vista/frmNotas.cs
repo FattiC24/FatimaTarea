@@ -28,18 +28,20 @@ namespace SistemaNotas.Vista
                                 from tbEstudiante in bd.Estudiante
                                 from tbMateria in bd.materia
                                 where tbNotas.id_estudiante == tbEstudiante.id_estudiante
-                                where tbNotas.id_materia == tbMateria.id_materia
+                                && tbNotas.id_materia == tbMateria.id_materia
 
                                 select new
                                 {
                                     Id = tbNotas.id_notas,
                                     Nombre = tbEstudiante.nombre_estudiante,
                                     Materia = tbMateria.nombre_materia,
-                                    Nota = tbNotas.nota
+                                    Nota = tbNotas.nota,
+                                    idMateria = tbMateria.id_materia,
+                                    idEstudiante = tbEstudiante.id_estudiante
                                 };
                 foreach (var iterardatos in innerJoin)
                 {
-                    dtvNotas.Rows.Add(iterardatos.Id, iterardatos.Nombre, iterardatos.Materia, iterardatos.Nota);
+                    dtvNotas.Rows.Add(iterardatos.Id, iterardatos.Nombre, iterardatos.Materia, iterardatos.Nota, iterardatos.idMateria, iterardatos.idEstudiante);
                 }
 
             }
@@ -101,8 +103,8 @@ namespace SistemaNotas.Vista
         }
         private void dtvNotas_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            String IdAlumno = dtvNotas.CurrentRow.Cells[1].Value.ToString();
-            String IdMateria = dtvNotas.CurrentRow.Cells[2].Value.ToString();
+            String IdAlumno = dtvNotas.CurrentRow.Cells[5].Value.ToString();
+            String IdMateria = dtvNotas.CurrentRow.Cells[4].Value.ToString();
             String Nota = dtvNotas.CurrentRow.Cells[3].Value.ToString();
             txtIdAlumno.Text = IdAlumno;
             txtIdMateria.Text = IdMateria;
@@ -123,11 +125,6 @@ namespace SistemaNotas.Vista
 
         }
 
-        private void btnRegresar_Click(object sender, EventArgs e)
-        {
-            MenuPrincipal m = new MenuPrincipal();
-            m.Show();
-            this.Hide();
-        }
+        
     }
 }
